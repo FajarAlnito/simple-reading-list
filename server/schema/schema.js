@@ -88,14 +88,14 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(BookType),
             resolve(parent, args){
                 // return books
-                return Book.find();
+                return Book.find().collation({ locale: "en" }).sort({name: 1});
             }
         },
         authors: {
             type: new GraphQLList(AuthorType),
             resolve(parent, args){
                 // return authors
-                return Author.find();
+                return Author.find().collation({ locale: "en" }).sort({name: 1});
             }
         }
     }
