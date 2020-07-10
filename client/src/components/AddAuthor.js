@@ -21,7 +21,7 @@ class AddAuthor extends Component{
             },
             refetchQueries: [{query: getAuthorsQuery}]
         });
-        
+        alert("Add Author Success")
     }
     render(){	
         return(

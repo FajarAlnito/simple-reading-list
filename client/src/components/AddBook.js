@@ -40,6 +40,7 @@ class AddBook extends Component{
             },
             refetchQueries: [{query: getBooksQuery}]
         });
+        alert("Add Book Success")
     }
     render(){	
         return(
