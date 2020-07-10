@@ -1,0 +1,13 @@
+body {
+  background: #eeeeee;
+  margin: 20px;
+}
+#book-list li{
+  margin: 10px;
+  font-size: 18px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
