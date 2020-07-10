@@ -29,6 +29,7 @@ class AddBook extends Component{
             })
         }
     }
+
     submitForm(e){
         e.preventDefault();
         this.props.addBookMutation({
@@ -43,7 +44,9 @@ class AddBook extends Component{
     render(){	
         return(
             <div>
-                <form onSubmit={this.submitForm.bind(this)}>
+            
+                <form className="add-book" onSubmit={this.submitForm.bind(this)}>
+                    <h3>Add Book</h3>
                     <div className="field">
                         <label>Book name:</label>
                         <input type="text" name="book-name" id="book-name" placeholder="Book name" onChange={e => this.setState({name: e.target.value})} />

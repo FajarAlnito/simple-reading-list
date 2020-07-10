@@ -31,15 +31,23 @@ body {
   padding: 0;
 }
 
-form{
+.add-book{
+  background: #ffffff;
+  padding: 20px;
+  position: fixed;
+  left: 400px;
+  bottom: 0;
+  width: 350px;
+}
+.add-author{
   background: #ffffff;
   padding: 20px;
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 400px;
+  width: 350px;
+  height: 175px;
 }
-
 form .field{
   display: grid;
   grid-template-columns: 1fr 1fr;
