@@ -24,13 +24,18 @@ class BookList extends Component {
             })
         }
     }
+    displayDetails(){
+        if(this.state.selected !== null){
+            return <BookDetails bookId={this.state.selected} />
+        }
+    }
     render(){
         return(
             <div>
                 <ul id="book-list">
                     { this.displayBooks() }
                 </ul>
-                <BookDetails bookId={this.state.selected} />
+                {this.displayDetails()}
             </div>
         );
     }

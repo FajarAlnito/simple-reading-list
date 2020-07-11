@@ -8,7 +8,7 @@ import AddAuthor from './components/AddAuthor';
 
 //Apollo client setup
 const client = new ApolloClient({
-  uri: 'http://localhost:3500/api',
+  uri: '/api',
 });
 
 
