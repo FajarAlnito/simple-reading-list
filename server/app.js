@@ -5,13 +5,18 @@ const schema = require('./schema/schema')
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const port = 3500;
 //Allow Cross Origin Request
 app.use(cors());
 
+//dotenv setting
+require('dotenv').config({path:`${__dirname}/../.env`});
+
+const env= process.env
+const PORT = env.SERVER_PORT;
+const DB = `mongodb://${env.DB_HOST}/${env.DB_NAME}`;
 
 //connect to mongodb local
-mongoose.connect('mongodb://localhost/gql-db',{useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(DB, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connection.once('open',()=>{
     console.log('\n [v]connected to database')
 });
@@ -22,6 +27,6 @@ app.use('/api', graphqlHTTP({
     graphiql: true
 }));
 
-app.listen(port, ()=>{
-    console.log(`\n [v]Listening to port ${port}`)
+app.listen(PORT, ()=>{
+    console.log(`\n [v]Listening to port ${PORT}`)
 });
